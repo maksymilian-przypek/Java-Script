@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wykonanie zapytania REST i tworzenie elementów DOM</title>
+</head>
+<body>
+    <h1>Dane z zapytania REST</h1>
+    <div id="dane"></div>
+
+    <script>
+        // Funkcja do tworzenia elementów DOM z danych
+        function wygenerujElementyDanych(dane) {
+            let kontener = document.getElementById('dane');
+            dane.forEach(osoba => {
+                let paragraf = document.createElement('p');
+                paragraf.textContent = `Imię: ${osoba.name}, Email: ${osoba.email}`;
+                kontener.appendChild(paragraf);
+            });
+        }
+
+        // Przykładowe wykonanie zapytania REST za pomocą fetch
+        fetch('https://przykladowy.api/uzytkownicy')
+            .then(response => response.json())
+            .then(dane => {
+                wygenerujElementyDanych(dane);
+            })
+            .catch(error => {
+                console.error('Błąd podczas pobierania danych:', error);
+            });
+
+        // Uwaga: powyższy URL jest tylko przykładowy i nie będzie działał.
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konwersja Typów w JavaScript</title>
+</head>
+<body>
+    <h1>Konwersja Typów: Numeryczny ↔ String</h1>
+
+    <script>
+        // Konwersja numeryczna na string
+        let liczba = 123;
+        let liczbaJakoString = liczba.toString();
+        console.log("Typ liczbaJakoString:", typeof liczbaJakoString); // "string"
+        console.log("Wartość liczbaJakoString:", liczbaJakoString); // "123"
+
+        // Konwersja string na liczbę całkowitą (int)
+        let stringLiczba = "456";
+        let stringNaInt = Number.parseInt(stringLiczba);
+        console.log("Typ stringNaInt:", typeof stringNaInt); // "number"
+        console.log("Wartość stringNaInt:", stringNaInt); // 456
+
+        // Konwersja string na liczbę zmiennoprzecinkową (float)
+        let stringFloat = "123.45";
+        let stringNaFloat = Number.parseFloat(stringFloat);
+        console.log("Typ stringNaFloat:", typeof stringNaFloat); // "number"
+        console.log("Wartość stringNaFloat:", stringNaFloat); // 123.45
+    </script>
+</body>
+</html>

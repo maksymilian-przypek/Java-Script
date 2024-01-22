@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coś</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;">
+        Your browser does not support the HTML canvas tag.</canvas>
+        
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+        
+        // Prostokąt zamalowany
+        ctx.fillStyle = "blue";
+        ctx.fillRect(20, 20, 100, 50); // Położenie X, położenie Y, szerokość, wysokość
+        
+        // Prostokąt niezamalowany
+        ctx.strokeStyle = "blue";
+        ctx.strokeRect(140, 20, 100, 50);
+        
+        // Trójkąt zamalowany
+        ctx.beginPath();
+        ctx.moveTo(20, 100); // X, Y
+        ctx.lineTo(70, 150);
+        ctx.lineTo(20, 150);
+        ctx.closePath();
+        ctx.fillStyle = "green";
+        ctx.fill();
+        
+        // Trójkąt niezamalowany
+        ctx.beginPath();
+        ctx.moveTo(140, 100);
+        ctx.lineTo(190, 150);
+        ctx.lineTo(140, 150);
+        ctx.closePath();
+        ctx.strokeStyle = "green";
+        ctx.stroke();
+        
+        // Okrąg zamalowany
+        ctx.beginPath();
+        ctx.arc(70, 220, 30, 0, 2 * Math.PI); // Położenie X, położenie Y, promień, ile zamalowanego koła
+        ctx.fillStyle = "red";
+        ctx.fill();
+        
+        // Okrąg niezamalowany
+        ctx.beginPath();
+        ctx.arc(190, 220, 30, 0, 2 * Math.PI);
+        ctx.strokeStyle = "red";
+        ctx.stroke();
+    </script>
+</body>
+</html>

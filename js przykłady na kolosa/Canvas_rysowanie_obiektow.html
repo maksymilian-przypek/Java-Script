@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Canvas API w JavaScript</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Canvas API: Rysowanie figur</h1>
+    <canvas id="myCanvas" width="400" height="400"></canvas>
+
+    <script>
+        let canvas = document.getElementById("myCanvas");
+        let ctx = canvas.getContext("2d");
+
+        // Rysowanie prostokąta
+        ctx.fillStyle = "red";
+        ctx.fillRect(10, 10, 100, 50); // zamalowany
+        ctx.strokeStyle = "blue";
+        ctx.strokeRect(10, 70, 100, 50); // niezamalowany
+
+        // Rysowanie trójkąta
+        ctx.beginPath();
+        ctx.moveTo(150, 10);
+        ctx.lineTo(200, 60);
+        ctx.lineTo(100, 60);
+        ctx.closePath();
+        ctx.fillStyle = "green";
+        ctx.fill(); // zamalowany
+        ctx.strokeStyle = "black";
+        ctx.stroke(); // kontur
+
+        // Rysowanie okręgu
+        ctx.beginPath();
+        ctx.arc(300, 50, 40, 0, 2 * Math.PI);
+        ctx.fillStyle = "yellow";
+        ctx.fill();
+        ctx.strokeStyle = "black";
+        ctx.stroke();
+
+        // Przesuwanie figury (przykładowo prostokąta)
+        function przesunProstokat() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // czyszczenie canvas
+
+            // Nowa pozycja dla prostokąta
+            ctx.fillStyle = "red";
+            ctx.fillRect(10 + Math.random() * 300, 10 + Math.random() * 300, 100, 50);
+        }
+
+        // Co 1 sekundę przesuwaj prostokąt
+        setInterval(przesunProstokat, 1000);
+    </script>
+</body>
+</html>

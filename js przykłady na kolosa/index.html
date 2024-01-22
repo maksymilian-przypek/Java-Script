@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript i DOM</title>
+    <style>
+        .highlight { color: red; }
+    </style>
+</head>
+<body>
+
+    <h1 id="main-title">Witaj w laboratorium JavaScript</h1>
+    <form>
+        <input type="text" id="input-box" value="Wpisz coś tutaj">
+        <button type="button" onclick="modifyContent()">Zatwierdź</button>
+    </form>
+
+    <div id="content-area">
+        <p class="paragraph">To jest akapit.</p>
+        <p class="paragraph">To jest inny akapit.</p>
+    </div>
+
+    <script>
+        function modifyContent() {
+            // getElementById i innerText
+            const mainTitle = document.getElementById('main-title');
+            mainTitle.innerText = 'Tytuł zmieniony przez JavaScript';
+
+            // getElementsByTagName i className
+            const paragraphs = document.getElementsByTagName('p');
+            for (let p of paragraphs) {
+                p.className = 'highlight';
+            }
+
+            // Właściwości: body, forms
+            const body = document.body;
+            const form = document.forms[0];
+
+            // Metody: append, createElement, setAttribute
+            const newElement = document.createElement('div');
+            newElement.setAttribute('id', 'new-element');
+            newElement.innerText = 'To jest nowy element';
+            body.append(newElement);
+
+            // Metody: replaceChildren, createTextNode
+            const newText = document.createTextNode('Zaktualizowany tekst');
+            const contentArea = document.getElementById('content-area');
+            contentArea.replaceChildren(newText);
+
+            // Właściwości: value, style
+            const inputBox = document.getElementById('input-box');
+            inputBox.value = 'Zmieniono tekst';
+            inputBox.style.border = '2px solid blue';
+            
+            // Wypisz wyniki na stronie
+            const resultsContainer = document.createElement('div');
+            resultsContainer.innerHTML = `
+                <h2>Wyniki działania funkcji modifyContent:</h2>
+                <p>Tytuł strony zmieniony przez JavaScript: ${mainTitle.innerText}</p>
+                <p>Liczba akapitów z klasą 'highlight': ${paragraphs.length}</p>
+                <p>Nowy element: ${newElement.innerText}</p>
+                <p>Zaktualizowany tekst w obszarze zawartości: ${newText.textContent}</p>
+                <p>Nowa wartość pola tekstowego: ${inputBox.value}</p>
+            `;
+            body.append(resultsContainer);
+        }
+    </script>
+
+    <h1>Przykład użycia zmiennych i pętli w JavaScript</h1>
+
+    <script>
+        // Deklaracja zmiennych
+        let liczbaA = 10;
+        let liczbaB = 5;
+        const STALA = 3;
+
+        // Wykonywanie operacji matematycznych
+        let suma = liczbaA + liczbaB;
+        let roznica = liczbaA - liczbaB;
+
+        // Dodanie stałej do zmiennej
+        let sumaZeStala = suma + STALA;
+        let roznicaZeStala = roznica - STALA;
+
+        // Wyświetlanie wyników
+        console.log("Suma: " + suma); // 15
+        console.log("Różnica: " + roznica); // 5
+        console.log("Suma ze stałą: " + sumaZeStala); // 18
+        console.log("Różnica ze stałą: " + roznicaZeStala); // 2
+
+        // Przykład pętli for
+        console.log("Przykład pętli for:");
+        for (let i = 0; i < 5; i++) {
+            console.log(i); // wyświetli liczby od 0 do 4
+        }
+
+        // Przykład pętli while
+        console.log("Przykład pętli while:");
+        let j = 0;
+        while (j < 5) {
+            console.log(j); // wyświetli liczby od 0 do 4
+            j++;
+        }
+
+        // Deklaracja tablicy
+        let liczby = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5];
+
+        // Wykorzystanie właściwości length
+        console.log("Długość tablicy: " + liczby.length);
+
+        // Filtrowanie elementów tablicy
+        let liczbyWiekszeOdCzterech = liczby.filter(liczba => liczba > 4);
+        console.log("Liczby większe od 4: " + liczbyWiekszeOdCzterech);
+
+        // Sortowanie elementów tablicy
+        let posortowaneLiczby = liczby.slice().sort((a, b) => a - b);
+        console.log("Posortowane liczby: " + posortowaneLiczby);
+
+        // Stwierdzanie, czy tablica zawiera element
+        let zawieraLiczbePiec = liczby.includes(5);
+        console.log("Czy tablica zawiera liczbę 5: " + zawieraLiczbePiec);
+    </script>
+</body>
+</html>

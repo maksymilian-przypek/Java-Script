@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Operacje na łańcuchach znaków w JavaScript</title>
+</head>
+<body>
+    <h1>Operacje na łańcuchach znaków</h1>
+    <script>
+        // Przykład metody includes
+        let tekst = "Witaj w świecie JavaScript!";
+        let zawieraJavaScript = tekst.includes("JavaScript");
+        console.log("Czy tekst zawiera 'JavaScript': " + zawieraJavaScript);
+
+        // Przykład metody split
+        let zdanie = "JavaScript jest zabawny";
+        let slowa = zdanie.split(" ");
+        console.log("Podzielony tekst: ", slowa);
+
+        // Przykład metody startsWith
+        let zaczynaSieOdJava = zdanie.startsWith("Java");
+        console.log("Czy zdanie zaczyna się od 'Java': " + zaczynaSieOdJava);
+
+        let zaczynaSieOdScript = zdanie.startsWith("Script");
+        console.log("Czy zdanie zaczyna się od 'Script': " + zaczynaSieOdScript);
+    </script>
+</body>
+</html>

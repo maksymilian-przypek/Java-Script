@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Przykład JavaScript z własnymi funkcjami</title>
+</head>
+<body>
+    <h1>Przykład definicji funkcji w JavaScript</h1>
+
+    <script>
+        // Funkcja bezargumentowa
+        function powitanie() {
+            console.log("Witaj w świecie JavaScript!");
+        }
+
+        // Wywołanie funkcji bezargumentowej
+        powitanie();
+
+        // Funkcja z argumentami
+        function dodaj(a, b) {
+            return a + b;
+        }
+
+        // Wywołanie funkcji z argumentami
+        let wynik = dodaj(5, 3);
+        console.log("Wynik dodawania: " + wynik);
+
+        // Funkcja z domyślnymi wartościami argumentów
+        function mnoz(x, y = 1) {
+            return x * y;
+        }
+
+        // Wywołanie funkcji z jednym argumentem (drugi jest domyślny)
+        console.log("Wynik mnożenia: " + mnoz(6)); // 6 * 1 = 6
+
+        // Wywołanie funkcji z dwoma argumentami
+        console.log("Wynik mnożenia: " + mnoz(6, 2)); // 6 * 2 = 12
+    </script>
+</body>
+</html>

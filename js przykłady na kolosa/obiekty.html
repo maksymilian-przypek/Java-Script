@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Przykład JavaScript z obiektami</title>
+</head>
+<body>
+    <h1>Przykład tworzenia obiektów w JavaScript</h1>
+
+    <script>
+        // Tworzenie obiektu przy użyciu literału obiektu
+        let samochod = {
+            marka: "Toyota",
+            model: "Corolla",
+            rok: 2020,
+            pełnaNazwa: function() {
+                return this.marka + " " + this.model;
+            },
+            silnik: {
+                pojemnosc: 1.8,
+                paliwo: "benzyna",
+                moc: function() {
+                    return "Moc silnika: " + this.pojemnosc * 100 + " KM";
+                }
+            }
+        };
+
+        // Wyświetlenie właściwości obiektu
+        console.log("Marka samochodu: " + samochod.marka);
+        console.log("Model samochodu: " + samochod.model);
+
+        // Wywołanie metody obiektu
+        console.log("Pełna nazwa samochodu: " + samochod.pełnaNazwa());
+
+        // Wywołanie metody zagnieżdżonego obiektu
+        console.log(samochod.silnik.moc());
+
+        // Dostęp do właściwości zagnieżdżonego obiektu
+        console.log("Pojemność silnika: " + samochod.silnik.pojemnosc);
+    </script>
+</body>
+</html>

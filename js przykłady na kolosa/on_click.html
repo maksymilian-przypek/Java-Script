@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zdarzenia w JavaScript</title>
+    <style>
+        #testMyszy { border: 1px solid black; padding: 10px; margin: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Zdarzenia w JavaScript</h1>
+
+    <button id="przycisk">Kliknij mnie</button>
+    <br><br>
+
+    <form id="formularz">
+        <input type="text" id="poleTekstowe">
+        <input type="submit" value="Wyślij">
+    </form>
+    <br>
+
+    <div id="testMyszy">Najedź myszką</div>
+
+    <script>
+        // Zdarzenie onclick
+        document.getElementById("przycisk").onclick = function() {
+            alert("Kliknięto przycisk!");
+        };
+
+        // Zdarzenie onsubmit
+        document.getElementById("formularz").onsubmit = function(event) {
+            event.preventDefault(); // zapobieganie standardowemu zachowaniu
+            alert("Wysłano formularz!");
+        };
+
+        // Zdarzenie onchange
+        document.getElementById("poleTekstowe").onchange = function() {
+            alert("Zmieniono zawartość pola tekstowego!");
+        };
+
+        // Dodawanie event listenera dla zdarzenia myszy
+        document.getElementById("testMyszy").addEventListener("mouseover", function() {
+            console.log("Najechano myszką na element!");
+        });
+
+        // Dodawanie event listenera dla zdarzenia klawiatury
+        document.addEventListener("keydown", function(event) {
+            console.log("Naciśnięto klawisz: " + event.key);
+        });
+    </script>
+</body>
+</html>
